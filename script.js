@@ -3,60 +3,90 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-fade-up');
-                observer.unobserve(entry.target);
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
-    }, observerOptions);
-
-    // Observe elements that should animate on scroll
-    document.querySelectorAll('.expertise-card, .stat-card, .publication-item, .section-title').forEach(el => {
-        el.classList.add('opacity-0'); // Add initial opacity 0 class if needed, or handle in CSS
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-        observer.observe(el);
     });
 
-    // Add class to trigger animation
-    const animateIn = (entries) => {
+    // Intersection Observer for scroll animations on bento tiles
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px'
+    };
+
+    const tileObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
+                tileObserver.unobserve(entry.target);
             }
         });
-    };
+    }, observerOptions);
 
-    const scrollObserver = new IntersectionObserver(animateIn, observerOptions);
-    document.querySelectorAll('.expertise-card, .stat-card, .publication-item, .section-title').forEach(el => {
-        scrollObserver.observe(el);
+    // Apply scroll animation to all bento tiles
+    document.querySelectorAll('.bento-tile').forEach(tile => {
+        tile.style.opacity = '0';
+        tile.style.transform = 'translateY(20px)';
+        tile.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out, border-color 0.3s ease';
+        tileObserver.observe(tile);
+    });
+
+    // Animate project cards on scroll
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                cardObserver.unobserve(entry.target);
+            }
+        });
+    }, { ...observerOptions, rootMargin: '0px 0px -20px 0px' });
+
+    document.querySelectorAll('.project-card, .exp-card, .skill-category').forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(15px)';
+        card.style.transition = `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s`;
+        cardObserver.observe(card);
     });
 
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(10, 10, 10, 0.95)';
-            navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            navbar.style.background = 'rgba(13, 13, 13, 0.95)';
+            navbar.style.backdropFilter = 'blur(16px)';
         } else {
-            navbar.style.background = 'rgba(10, 10, 10, 0.8)';
-            navbar.style.boxShadow = 'none';
+            navbar.style.background = 'rgba(13, 13, 13, 0.85)';
+            navbar.style.backdropFilter = 'blur(12px)';
         }
+    });
+
+    // Active nav link highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.style.color = '';
+            link.style.opacity = '0.5';
+            if (link.getAttribute('href') === `#${current}`) {
+                link.style.color = '';
+                link.style.opacity = '1';
+            }
+        });
     });
 });

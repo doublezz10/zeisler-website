@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zach Zeisler | Computational Neuroscientist</title>
+    <title>Zach Zeisler, PhD | Computational Neuroscientist</title>
     <meta name="description"
-        content="Portfolio of Zach Zeisler, Computational Neuroscientist and Data Scientist specializing in machine learning, behavioral analysis, and large-scale data processing.">
+        content="Portfolio of Zach Zeisler, PhD — computational neuroscientist specializing in high-dimensional signal processing, machine learning, and complex data analysis. Seeking data science, BCI, and research scientist roles in NYC or remote.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,9 +19,14 @@
         <div class="container nav-container">
             <a href="#" class="logo">ZZ.</a>
             <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#looking-for">What I Do</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#publications">Publications</a></li>
+                <li><a href="#awards">Awards</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -32,166 +37,289 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container hero-container">
+    <main class="bento-grid">
+        <!-- Hero Section -->
+        <section class="bento-tile hero-tile" id="hero">
             <div class="hero-content">
-                <h1 class="animate-fade-up">Zach Zeisler</h1>
-                <h2 class="animate-fade-up delay-1">Computational Neuroscientist & Data Scientist</h2>
-                <p class="hero-tagline animate-fade-up delay-2">Translating Neuroscience Insights into Intelligent
-                    Systems</p>
-                <div class="hero-buttons animate-fade-up delay-3">
-                    <a href="#expertise" class="btn btn-primary">View Expertise</a>
-                    <a href="Zeisler CV.pdf" target="_blank" class="btn btn-secondary">Download CV</a>
+                <h1 class="animate-fade-up">Zach Zeisler, PhD</h1>
+                <h2 class="animate-fade-up delay-1">High-dimensional signal processing and ML at the intersection of neuroscience and applied data science</h2>
+                <p class="hero-tagline animate-fade-up delay-2">I decode complex neural and behavioral data — and build the pipelines to do it at scale. Currently seeking data science, BCI, and research scientist roles.</p>
+                <div class="hero-links animate-fade-up delay-3">
+                    <a href="Zeisler CV.pdf" target="_blank" class="btn btn-primary">Download CV</a>
+                    <a href="https://github.com/DoubleZZ10" target="_blank" class="btn btn-secondary">GitHub</a>
+                    <a href="mailto:zachzeisler1@gmail.com" class="btn btn-secondary">Email</a>
                 </div>
             </div>
-            <div class="hero-image animate-fade-up delay-2">
-                <img src="assets/headshot.jpg" alt="Zach Zeisler Headshot">
+            <div class="hero-image">
+                <img src="assets/headshot.jpg" alt="Zach Zeisler">
             </div>
-        </div>
-        <div class="hero-background"></div>
-    </header>
+        </section>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>I am a computational neuroscientist and data scientist specializing in decoding complex
-                        decision-making algorithms in biological systems. My research at Mount Sinai focuses on
-                        understanding how the brain processes information, represents uncertainty, and adapts behavior.
-                    </p>
-                    <p>I build production-quality machine learning pipelines to analyze massive datasets (100+ GB/day),
-                        applying rigorous statistical methods to extract signal from noise. My expertise in analyzing
-                        complex, high-dimensional neural data translates directly to solving challenging problems in
-                        data science, machine learning, and quantitative research.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <h3>100+ GB</h3>
-                        <p>Daily Neural Data Processed</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>10+ Years</h3>
-                        <p>Experience in Scientific Computing</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>3</h3>
-                        <p>First-Author Publications</p>
-                    </div>
+        <!-- About Section -->
+        <section class="bento-tile about-tile" id="about">
+            <div class="tile-content">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p class="lead">I analyze brain signals for a living — extracting meaningful patterns from noisy, high-dimensional data to decode decision-making behavior.</p>
+                    <p>My path started at Mercer University (Neuroscience + Latin, summa cum laude), continued through a PhD at Mount Sinai where I developed innovative quantitative neuroanatomical methods, and now extends into postdoctoral work on reinforcement learning and neural decoding.</p>
+                    <p>What excites me is translating rigorous analytical skills into real-world applications: building better data pipelines, improving signal processing workflows, and transforming raw physiological signals into actionable insights.</p>
+                    <p>I believe the same challenges I solve for neural data — noise, dimensionality, real-time constraints, signal extraction — apply directly to a wide range of complex data problems. BCI and biosensors are where I see particularly exciting opportunities, but I'm drawn to any domain where rigorous analysis of messy, high-volume data creates meaningful impact.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="expertise" class="section bg-darker">
-        <div class="container">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <div class="icon">🤖</div>
-                    <h3>Machine Learning</h3>
-                    <p>Development of end-to-end pipelines using PyTorch, scikit-learn, and RNNs. Expertise in building
-                        interpretable models to decode behavior and ensure robust performance.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon">📈</div>
-                    <h3>Statistical Analysis</h3>
-                    <p>Expertise in time-series analysis, Hidden Markov Models, and Bayesian inference. Applying
-                        rigorous statistical testing to extract reliable signals from noisy, high-dimensional data.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon">🧠</div>
-                    <h3>Neural Signal Processing</h3>
-                    <p>Processing high-dimensional biosensor data. Designing simulation frameworks and optimizing
-                        sensor-algorithm relationships for real-time decoding of complex systems.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="icon">🤝</div>
-                    <h3>Leadership & Impact</h3>
-                    <p>Managing multi-site NIH projects and driving equity in STEM through leadership roles in
-                        <strong>Project SHORT</strong>, mentoring the next generation of scientists.
-                    </p>
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-
-    <section id="publications" class="section">
-        <div class="container">
-            <h2 class="section-title">Selected Publications</h2>
-            <div class="publications-list">
-                <article class="publication-item">
-                    <span class="year">2025</span>
-                    <div class="pub-details">
-                        <h3>Consistent Hierarchies of Single-Neuron Timescales in Mice, Macaques, and Humans</h3>
-                        <p><em>Journal of Neuroscience</em>. Investigates the hierarchical organization of neural
-                            timescales across species, revealing conserved principles of temporal processing.</p>
+        <!-- Looking For Section -->
+        <section class="bento-tile looking-for-tile" id="looking-for">
+            <div class="tile-content">
+                <h2 class="section-title">What I'm Looking For</h2>
+                <div class="looking-for-content">
+                    <div class="lf-grid">
+                        <div class="lf-item">
+                            <span class="lf-label">Location</span>
+                            <span class="lf-value">New York City or remote</span>
+                        </div>
+                        <div class="lf-item">
+                            <span class="lf-label">Role</span>
+                            <span class="lf-value">Data scientist, BCI engineer, research scientist, or related</span>
+                        </div>
+                        <div class="lf-item">
+                            <span class="lf-label">Impact</span>
+                            <span class="lf-value">Working with high-volume complex data that creates meaningful outcomes</span>
+                        </div>
                     </div>
-                </article>
-                <article class="publication-item">
-                    <span class="year">2024</span>
-                    <div class="pub-details">
-                        <h3>Comparative basolateral amygdala connectomics reveals dissociable single-neuron projection
-                            patterns to frontal cortex in macaques and mice</h3>
-                        <p><em>Current Biology</em>. A comparative study demonstrating species-specific differences in
-                            the wiring of emotional brain circuits.</p>
+                    <div class="looking-for-detail">
+                        <p>I process 100+ GB/day of high-dimensional neural and behavioral data, building production-quality ML pipelines to extract signal from noise. I'm drawn to any domain where rigorous analysis of messy, high-volume data creates real impact.</p>
+                        <p><strong>Particularly excited by:</strong> biosensor applications, real-time signal processing, health tech, and any challenge involving complex, high-dimensional data streams.</p>
+                        <p><strong>Also open to:</strong> standard data science roles in tech, finance, or research where my signal processing and ML expertise adds value.</p>
                     </div>
-                </article>
-                <article class="publication-item">
-                    <span class="year">2023</span>
-                    <div class="pub-details">
-                        <h3>Single basolateral amygdala neurons in macaques exhibit distinct connectional motifs with
-                            frontal cortex</h3>
-                        <p><em>Neuron</em>. Uncovers the precise anatomical rules governing how the amygdala
-                            communicates with decision-making centers in the primate brain.</p>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="awards" class="section bg-darker">
-        <div class="container">
-            <h2 class="section-title">Honors & Awards</h2>
-            <div class="awards-grid">
-                <div class="award-content">
-                    <h3>Cajal Club Krieg Cortical Scholar Award (2025)</h3>
-                    <p>Awarded for outstanding contributions to the understanding of the cerebral cortex. The Krieg
-                        Cortical Recognition Awards are presented to researchers at various career stages who have made
-                        significant discoveries in cortical structure and function.</p>
-                    <a href="https://cajalclub.org" target="_blank" class="link-text">Learn More &rarr;</a>
-                </div>
-                <div class="award-image">
-                    <img src="assets/award.jpg"
-                        alt="Zach Zeisler receiving the Cajal Club Krieg Cortical Scholar Award">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="section bg-gradient">
-        <div class="container contact-container">
-            <h2>Let's Connect</h2>
-            <p>I am currently exploring opportunities to apply my expertise in computational neuroscience and machine
-                learning to solve real-world problems.</p>
-            <div class="contact-links">
-                <a href="mailto:zachzeisler1@gmail.com" class="btn btn-primary">Email Me</a>
-                <a href="https://www.linkedin.com/in/zacharyzeisler" target="_blank"
-                    class="btn btn-secondary">LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=Dx2_HAkAAAAJ&hl=en" target="_blank"
-                    class="btn btn-secondary">Google Scholar</a>
-                <a href="https://x.com/ZachZeisler1" target="_blank" class="btn btn-secondary">X (Twitter)</a>
+        <!-- Projects Section -->
+        <section class="bento-tile projects-tile" id="projects">
+            <div class="tile-content">
+                <h2 class="section-title">Selected Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-type">Research Paper</span>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <h3>Cross-Species Neural Dynamics</h3>
+                        <p class="journal">Journal of Neuroscience</p>
+                        <p class="project-desc">Analyzed ~20,000 single neurons across mice, macaques, and humans to identify conserved hierarchies of neural timescales. Demonstrated expertise in extracting signal from noise across species — a challenge common to any high-dimensional biosensor or behavioral data application.</p>
+                        <div class="project-tags">
+                            <span>RNN Analysis</span>
+                            <span>Dimensionality Reduction</span>
+                            <span>Bayesian Inference</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-type">Data Pipeline</span>
+                            <span class="project-year">2024-Present</span>
+                        </div>
+                        <h3>High-Density Electrophysiology</h3>
+                        <p class="project-desc">Built and maintained end-to-end data pipelines processing neural signals from awake behaving primates. 157-channel custom electrode arrays (Gray Matter collaboration), 40-70 single neurons + mesoscale LFPs recorded simultaneously.</p>
+                        <div class="project-stats">
+                            <span class="stat-highlight">10,000+ neurons recorded and sorted</span>
+                        </div>
+                        <div class="project-tags">
+                            <span>Real-time Analysis</span>
+                            <span>Python/PyTorch</span>
+                            <span>Signal Processing</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-header">
+                            <span class="project-type">Communications</span>
+                            <span class="project-year">2024-2025</span>
+                        </div>
+                        <h3>Scientific Communication</h3>
+                        <p class="project-desc">Translating complex neural findings into actionable insights for diverse audiences. Distilled high-dimensional data into clear narratives at premier venues.</p>
+                        <div class="project-tags">
+                            <span>NY Memory Hub Conference (2025) — invited talk</span>
+                            <span>Janelia Workshop (2025) — workshop</span>
+                            <span>COSYNE 2025 — poster</span>
+                            <span>Cold Spring Harbour (2024) — poster</span>
+                        </div>
+                    </article>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="bento-tile skills-tile" id="skills">
+            <div class="tile-content">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="skills-intro">Expertise applies to neural data, biosensors, or any complex high-dimensional data system.</p>
+                <div class="skills-matrix">
+                    <div class="skill-category">
+                        <h3>Languages & Frameworks</h3>
+                        <ul>
+                            <li>Python (NumPy, pandas, PyTorch, scikit-learn)</li>
+                            <li>R (tidyverse, brms)</li>
+                            <li>MATLAB</li>
+                            <li>SQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>ML & Statistical Methods</h3>
+                        <ul>
+                            <li>Neural networks (RNNs, MLPs)</li>
+                            <li>Reinforcement learning algorithms</li>
+                            <li>Dimensionality reduction (PCA, t-SNE, UMAP)</li>
+                            <li>Bayesian inference, HMMs</li>
+                            <li>Encoding/decoding models</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Signal Processing</h3>
+                        <ul>
+                            <li>Real-time electrophysiology</li>
+                            <li>LFP & single-neuron analysis</li>
+                            <li>Manifold characterization</li>
+                            <li>Noise reduction & feature extraction</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Platforms</h3>
+                        <ul>
+                            <li>Pynapple, NeMos</li>
+                            <li>Linux HPC environments</li>
+                            <li>GitHub (DoubleZZ10)</li>
+                            <li>fMRI, neural, and behavioral data</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="bento-tile experience-tile" id="experience">
+            <div class="tile-content">
+                <h2 class="section-title">Experience & Leadership</h2>
+                <div class="experience-grid">
+                    <div class="exp-card">
+                        <h3>Postdoctoral Fellow</h3>
+                        <p class="exp-meta">Icahn School of Medicine at Mount Sinai | 2024-Present</p>
+                        <ul>
+                            <li>Process 100+ GB/day of high-dimensional neural and behavioral data</li>
+                            <li>NIH-funded RL decoding project ($802K)</li>
+                            <li>Design custom electrode arrays (157-channel) with Gray Matter Research</li>
+                            <li>Real-time behavioral task design and analysis</li>
+                        </ul>
+                    </div>
+                    <div class="exp-card">
+                        <h3>PhD in Neuroscience</h3>
+                        <p class="exp-meta">Icahn School of Medicine at Mount Sinai | 2019-2024</p>
+                        <ul>
+                            <li>Secured $758K in competitive NIH funding</li>
+                            <li>2 first-author papers in Neuron, Current Biology</li>
+                            <li>Multi-site NIH project coordination ($2.2M ongoing)</li>
+                            <li>Advisor: Peter Rudebeck, D.Phil</li>
+                        </ul>
+                    </div>
+                    <div class="exp-card">
+                        <h3>Project SHORT — Director of Outreach</h3>
+                        <p class="exp-meta">Mount Sinai | 2020-2023</p>
+                        <ul>
+                            <li>Pro bono admissions consulting for underrepresented students</li>
+                            <li>Led website redesign and student mentorship</li>
+                            <li>Mentored 10+ students into graduate/medical school</li>
+                        </ul>
+                    </div>
+                    <div class="exp-card">
+                        <h3>Teaching Assistant</h3>
+                        <p class="exp-meta">Icahn School of Medicine | 2021, 2022</p>
+                        <ul>
+                            <li>Behavioral and Cognitive Neuroscience (PhD-level courses)</li>
+                            <li>Developed curriculum and mentored graduate students</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section class="bento-tile publications-tile" id="publications">
+            <div class="tile-content">
+                <h2 class="section-title">Publications</h2>
+                <div class="publications-list">
+                    <article class="pub-item">
+                        <span class="pub-year">2025</span>
+                        <div class="pub-details">
+                            <h3>Evolutionary road to primate prefrontal cortex</h3>
+                            <p><em>In: The Evolution of Nervous Systems</em>, 3rd ed., Vol. 3</p>
+                        </div>
+                    </article>
+                    <article class="pub-item">
+                        <span class="pub-year">2025</span>
+                        <div class="pub-details">
+                            <h3><a href="https://www.jneurosci.org/content/45/19/e2155242025" target="_blank">Consistent hierarchies of single-neuron timescales in mice, macaques, and humans</a></h3>
+                            <p><em>Journal of Neuroscience</em> 45(19)</p>
+                        </div>
+                    </article>
+                    <article class="pub-item">
+                        <span class="pub-year">2024</span>
+                        <div class="pub-details">
+                            <h3><a href="https://www.cell.com/current-biology/fulltext/S0960-9822(24)00764-4" target="_blank">Comparative basolateral amygdala connectomics reveals dissociable single-neuron projection patterns</a></h3>
+                            <p><em>Current Biology</em> 34(14)</p>
+                        </div>
+                    </article>
+                    <article class="pub-item">
+                        <span class="pub-year">2023</span>
+                        <div class="pub-details">
+                            <h3><a href="https://www.cell.com/neuron/fulltext/S0896-6273(23)00711-0" target="_blank">Single basolateral amygdala neurons in macaques exhibit distinct connectional motifs with frontal cortex</a></h3>
+                            <p><em>Neuron</em> 111</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section with Photos -->
+        <section class="bento-tile awards-tile" id="awards">
+            <div class="tile-content">
+                <h2 class="section-title">Recognition</h2>
+                <div class="awards-showcase">
+                    <div class="awards-photos">
+                        <figure class="award-photo">
+                            <img src="assets/cajalclub_award.jpg" alt="Receiving the Cajal Club Krieg Cortical Scholar Award">
+                            <figcaption>Receiving the Cajal Club Krieg Cortical Scholar Award, 2025</figcaption>
+                        </figure>
+                    </div>
+                    <div class="award-details">
+                        <h3>Cajal Club Krieg Cortical Scholar Award</h3>
+                        <p class="award-year">2025</p>
+                        <p>The Krieg Cortical Kudos recognize outstanding scientists working on the cerebral cortex across three career stages: the established investigator (Discoverer), the young professional within ten years of their advanced degree (Explorer), and recent PhD graduates no more than two years beyond their degree (Scholar). I was honored to receive the Scholar award for contributions to understanding cortical structure and function.</p>
+                        <p><a href="https://www.cajalclub.org/krieg-cortical-kudos" target="_blank" class="link-text">Learn more about the Krieg Cortical Kudos</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="bento-tile contact-tile" id="contact">
+            <div class="tile-content">
+                <h2>Let's Connect</h2>
+                <p>I'm actively exploring opportunities in NYC or remote. Let's discuss how my neural data expertise can contribute to your team.</p>
+                <div class="contact-links">
+                    <a href="mailto:zachzeisler1@gmail.com" class="btn btn-primary">Email Me</a>
+                    <a href="https://www.linkedin.com/in/zacharyzeisler" target="_blank" class="btn btn-secondary">LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?user=Dx2_HAkAAAAJ&hl=en" target="_blank" class="btn btn-secondary">Google Scholar</a>
+                    <a href="https://github.com/DoubleZZ10" target="_blank" class="btn btn-secondary">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container footer-content">
             <p>&copy; 2025 Zach Zeisler. All rights reserved.</p>
-            <div class="social-links">
-                <!-- Add social links here if available -->
-            </div>
         </div>
     </footer>
 
