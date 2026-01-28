@@ -89,4 +89,40 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Mobile Navigation Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav .nav-links a');
+
+    if (hamburger && mobileNav && mobileNavClose) {
+        // Open mobile nav
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close mobile nav
+        mobileNavClose.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close mobile nav when clicking a link
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close mobile nav on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
 });
