@@ -1,0 +1,12 @@
+title: Zach Zeisler
+description: Computational Neuroscientist Portfolio
+theme: minima
+
+# Disable Jekyll processing for plain HTML/CSS/JS
+plugins: []
+
+# Exclude large files from processing
+exclude:
+  - Zeisler CV.pdf
+  - cover_letter_garner.md
+  - sync_website.sh
