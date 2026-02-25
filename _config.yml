@@ -7,6 +7,5 @@ plugins: []
 
 # Exclude large files from processing
 exclude:
-  - Zeisler CV.pdf
   - cover_letter_garner.md
   - sync_website.sh
