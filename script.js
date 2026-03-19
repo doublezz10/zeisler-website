@@ -59,11 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(13, 13, 13, 0.95)';
+            navbar.style.background = 'rgba(5, 5, 8, 0.95)';
             navbar.style.backdropFilter = 'blur(16px)';
         } else {
-            navbar.style.background = 'rgba(13, 13, 13, 0.85)';
-            navbar.style.backdropFilter = 'blur(12px)';
+            navbar.style.background = 'rgba(5, 5, 8, 0.8)';
+            navbar.style.backdropFilter = 'blur(16px)';
         }
     });
 

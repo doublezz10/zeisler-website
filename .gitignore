@@ -1,0 +1,8 @@
+# Ignore application materials (personal/job-specific)
+applications/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore sync scripts (personal use)
+sync_website.sh
