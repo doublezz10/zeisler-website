@@ -592,6 +592,32 @@ ul {
     line-height: 1.6;
 }
 
+.project-points {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+}
+
+.project-points li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding-left: 1rem;
+    position: relative;
+    line-height: 1.55;
+    margin-bottom: 0.5rem;
+}
+
+.project-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 5px;
+    height: 5px;
+    background: var(--accent-cyan);
+    border-radius: 50%;
+}
+
 .project-stats {
     margin-bottom: 1rem;
 }
@@ -763,11 +789,21 @@ ul {
     border-radius: 12px;
     border: 1px solid rgba(6, 182, 212, 0.08);
     transition: var(--transition-smooth);
+    position: relative;
 }
 
 .pub-item:hover {
     background: rgba(6, 182, 212, 0.05);
     border-color: rgba(6, 182, 212, 0.2);
+}
+
+/* Make the entire publication card clickable */
+.pub-item a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    cursor: pointer;
 }
 
 .pub-year {
@@ -803,6 +839,50 @@ ul {
     font-size: 0.85rem;
     color: var(--text-secondary);
     font-style: italic;
+}
+
+.pub-details p.pub-gloss {
+    font-style: normal;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+}
+
+/* Talk type badges */
+.talk-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.talk-type svg {
+    width: 11px;
+    height: 11px;
+}
+
+.talk-type-invited {
+    color: var(--accent-cyan);
+    background: rgba(6, 182, 212, 0.1);
+    border: 1px solid rgba(6, 182, 212, 0.25);
+}
+
+.talk-type-oral {
+    color: var(--accent-blue);
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.talk-type-poster {
+    color: #a78bfa;
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.25);
 }
 
 /* ============================================

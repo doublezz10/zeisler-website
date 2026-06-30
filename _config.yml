@@ -1,11 +1,10 @@
-title: Zach Zeisler
-description: Computational Neuroscientist Portfolio
+title: Zachary Zeisler, PhD
+description: Systems neuroscientist studying the structural and functional organization of primate frontal and limbic circuits for advanced cognition. Postdoctoral Fellow in the Rudebeck Lab at the Icahn School of Medicine at Mount Sinai.
 theme: minima
 
 # Disable Jekyll processing for plain HTML/CSS/JS
 plugins: []
 
-# Exclude large files from processing
+# Exclude large/sensitive files from processing
 exclude:
-  - cover_letter_garner.md
   - sync_website.sh

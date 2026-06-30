@@ -1,82 +1,82 @@
-# Zach Zeisler Portfolio Website
+# Zachary Zeisler — Personal Website
 
-A digital CV and portfolio website for employers, showcasing the work of Zach Zeisler, PhD - a computational neuroscientist specializing in high-dimensional signal processing, machine learning, and complex data analysis.
+The academic website of **Zachary R. Zeisler, PhD**, a systems neuroscientist studying the structural and functional organization of frontal and limbic circuits that support advanced cognition in primates.
 
 ## Purpose
 
-This site serves as a professional portfolio to attract opportunities in:
-- Data science roles
-- Brain-computer interface (BCI) engineering
-- Research scientist positions
-- Neural data / biosensor applications
+This site documents ongoing and published research on:
+- Comparative neuroanatomy of amygdala–frontal circuits (mice, macaques, humans)
+- Circuit physiology of reward learning in behaving macaques
+- Population dynamics and intrinsic timescales across species
 
-Primary audience: hiring managers, recruiters, and potential collaborators in NYC or remote positions.
+Primary audience: neuroscience colleagues, students, collaborators, and reviewers in the primate systems-neuroscience community.
+
+## Sections
+
+1. **Hero** — Name, research focus, affiliation, links to CV and academic profiles
+2. **About** — Research interests and brief biography
+3. **Recognition** — Cajal Club Krieg Cortical Scholar Award (2025)
+4. **Research** — Three thematic threads spanning PhD and postdoctoral work
+5. **Publications** — Peer-reviewed papers and invited book chapters
+6. **Invited Talks & Selected Presentations** — Conference and departmental talks
+7. **Appointments** — Current postdoctoral position, PhD, and undergraduate training
+8. **Teaching, Mentoring & Outreach** — TA, mentorship, and STEM-advocacy service
+9. **Contact** — Email and academic profile links
 
 ## Design Choices
 
 ### Dark Theme
-- **Background**: Deep black (`#0d0d0d`) for a modern, sophisticated look
-- **Cards**: Slightly elevated dark gray (`#161616`) with subtle borders
+- **Background**: Deep near-black (`#050508`) for a clean, low-glare academic reading experience
+- **Cards**: Slightly elevated dark (`#0a0a10`) with subtle borders
 - **Text**: High contrast white primary text with muted secondary text
 
-The dark theme communicates technical sophistication and aligns with the neuroscience/tech intersection of the brand.
+The dark theme is professional, screen-friendly, and avoids the visual heaviness of light themes for long reading sessions.
 
 ### Bento Grid Layout
 - Sections arranged as modular "tiles" on a 12-column grid
-- Creates visual hierarchy while maintaining a clean, organized feel
-- Hover effects add subtle interactivity without being distracting
-- Fully responsive - collapses gracefully on mobile
+- Creates clear visual hierarchy without the rigidity of stacked sections
+- Each tile is self-contained and can be re-ordered without layout breakage
+- Fully responsive — collapses gracefully on tablet and mobile
 
 ### Color Palette
-- **Primary accent**: Blue (`#3b82f6`) - conveys trust, intelligence, technology
-- **Secondary accent**: Cyan (`#0ea5e9`) - adds depth with gradient effects
+- **Primary accent**: Cyan (`#06b6d4`)
+- **Secondary accent**: Blue (`#3b82f6`)
 - **Borders**: Very subtle white transparencies for depth without harsh lines
 
 ### Typography
 - **Headings**: Outfit (modern, geometric sans-serif)
-- **Body**: Inter (highly readable, clean)
+- **Body**: Inter (highly readable, designed for screens)
 
-Both Google Fonts are loaded via CDN for fast loading and consistent rendering.
-
-### Sections
-1. **Hero** - Name, tagline, call-to-action buttons (CV, GitHub, Email)
-2. **About** - Brief professional background
-3. **What I'm Looking For** - Role/location preferences, impact goals
-4. **Projects** - Featured research and technical projects
-5. **Skills** - Matrix of technical expertise
-6. **Experience** - Work history and leadership
-7. **Publications** - Academic papers and citations
-8. **Awards** - Recognition (includes photo)
-9. **Contact** - Call to action with links
+Both Google Fonts are loaded via CDN for fast, consistent rendering.
 
 ## Tech Stack
 
-- **HTML5** - Semantic, accessible markup
-- **CSS3** - Custom styles with CSS variables, Grid, Flexbox
-- **JavaScript** - Minimal (mobile nav toggle)
-- **No frameworks** - Lightweight, fast-loading static site
-- **Deployed via GitHub Pages** - Free hosting with custom domain support
+- **HTML5** — Semantic, accessible markup
+- **CSS3** — Custom styles with CSS variables, Grid, and Flexbox
+- **JavaScript** — Minimal (mobile nav toggle only)
+- **No frameworks** — Lightweight, fast-loading static site
+- **Deployed via GitHub Pages** — Free hosting with custom domain support
 
 ## Deployment
 
 1. Push changes to the `main` branch
 2. GitHub Pages automatically deploys from `/ (root)`
-3. Custom domain `zachzeisler.com` configured via CNAME
+3. Custom domain `zachzeisler.com` configured via `CNAME`
 
 ## File Structure
 
 ```
 /
-├── index.html          # Main page content
-├── style.css           # All styles
-├── script.js           # Mobile navigation
-├── _config.yml         # Jekyll config (for GitHub Pages)
-├── CNAME               # Custom domain
+├── index.html              # Main page content
+├── style.css               # All styles
+├── script.js               # Mobile navigation
+├── _config.yml             # Jekyll config (for GitHub Pages)
+├── CNAME                   # Custom domain
 ├── assets/
-│   ├── headshot.jpg    # Profile photo
-│   └── cajalclub_award.jpg
-├── Zeisler CV.pdf      # Downloadable resume
-└── README.md           # This file
+│   ├── headshot.jpg        # Profile photo
+│   └── cajalclub_award.jpg # Cajal Club award ceremony photo
+├── Zeisler CV.pdf          # Downloadable academic CV
+└── README.md               # This file
 ```
 
 ## Updating Content
@@ -84,5 +84,5 @@ Both Google Fonts are loaded via CDN for fast loading and consistent rendering.
 - Edit `index.html` to change text content
 - Edit `style.css` to modify styling
 - Replace images in `assets/` folder
-- Update `Zeisler CV.pdf` with latest resume version
-- Commit and push changes - deployment is automatic
+- Update `Zeisler CV.pdf` with the latest CV version
+- Commit and push changes — deployment is automatic
