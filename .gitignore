@@ -6,3 +6,6 @@ applications/
 
 # Ignore sync scripts (personal use)
 sync_website.sh
+
+# Ignore CV source document (binary, not for the deployed site)
+Zeisler CV.docx
