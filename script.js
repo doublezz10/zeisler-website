@@ -1,128 +1,130 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+/* ============================================================
+   ZACHARY ZEISLER — minimal site motion
+   ============================================================ */
 
-    // Intersection Observer for scroll animations on bento tiles
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -30px 0px'
-    };
+(function () {
+    'use strict';
 
-    const tileObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                tileObserver.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Apply scroll animation to all bento tiles
-    document.querySelectorAll('.bento-tile').forEach(tile => {
-        tile.style.opacity = '0';
-        tile.style.transform = 'translateY(20px)';
-        tile.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out, border-color 0.3s ease';
-        tileObserver.observe(tile);
-    });
+    /* ----------------------------------------------------------
+       1. Hero playback tick — a single discrete event on load
+       ---------------------------------------------------------- */
+    function initPlayhead() {
+        const line = document.querySelector('.playback-line');
+        const time = document.getElementById('playtime');
+        if (!line) return;
 
-    // Animate project cards on scroll
-    const cardObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                cardObserver.unobserve(entry.target);
-            }
-        });
-    }, { ...observerOptions, rootMargin: '0px 0px -20px 0px' });
-
-    document.querySelectorAll('.project-card, .exp-card, .skill-category').forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(15px)';
-        card.style.transition = `opacity 0.5s ease-out ${index * 0.1}s, transform 0.5s ease-out ${index * 0.1}s`;
-        cardObserver.observe(card);
-    });
-
-    // Navbar scroll effect
-    const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(5, 5, 8, 0.95)';
-            navbar.style.backdropFilter = 'blur(16px)';
-        } else {
-            navbar.style.background = 'rgba(5, 5, 8, 0.8)';
-            navbar.style.backdropFilter = 'blur(16px)';
+        if (prefersReducedMotion) {
+            if (time) time.textContent = '00:01:30';
+            return;
         }
-    });
 
-    // Active nav link highlighting
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+        // Wait one frame so the keyframe starts from the initial CSS state
+        requestAnimationFrame(() => {
+            line.classList.add('is-animating');
+        });
 
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute('id');
+        // Update the timestamp text as the playhead crosses the line
+        const totalMs = 900;
+        const startedAt = performance.now();
+
+        function tick(now) {
+            const elapsed = now - startedAt;
+            if (elapsed >= totalMs) {
+                if (time) time.textContent = '00:01:30';
+                return;
             }
+            const seconds = Math.floor((elapsed / totalMs) * 90);
+            const mm = String(Math.floor(seconds / 60)).padStart(2, '0');
+            const ss = String(seconds % 60).padStart(2, '0');
+            const cs = String(Math.floor(((elapsed / totalMs) * 90 - seconds) * 100)).padStart(2, '0');
+            if (time) time.textContent = `00:${mm}:${ss}`;
+            requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+    }
+
+    /* ----------------------------------------------------------
+       2. Scroll reveal — single pass, classes only
+       ---------------------------------------------------------- */
+    function initReveal() {
+        if (prefersReducedMotion) return;
+
+        const targets = document.querySelectorAll(
+            '.section, .entry, .kicker, .display, .lede, .hero-roles, .hero-cta, .hero-right, .playback-line'
+        );
+
+        targets.forEach((el, i) => {
+            el.classList.add('reveal');
+            el.style.transitionDelay = `${Math.min(i * 30, 240)}ms`;
         });
 
-        navLinks.forEach(link => {
-            link.style.color = '';
-            link.style.opacity = '0.5';
-            if (link.getAttribute('href') === `#${current}`) {
-                link.style.color = '';
-                link.style.opacity = '1';
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.08,
+            rootMargin: '0px 0px -40px 0px',
+        });
+
+        targets.forEach((el) => io.observe(el));
+    }
+
+    /* ----------------------------------------------------------
+       3. Header background — subtle on scroll
+       ---------------------------------------------------------- */
+    function initHeader() {
+        const header = document.querySelector('.site-header');
+        if (!header) return;
+
+        const update = () => {
+            if (window.scrollY > 8) {
+                header.style.background = 'rgba(10, 11, 20, 0.92)';
+            } else {
+                header.style.background = 'rgba(10, 11, 20, 0.78)';
             }
-        });
-    });
+        };
 
-    // Mobile Navigation Toggle
-    const hamburger = document.querySelector('.hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    const mobileNavClose = document.getElementById('mobileNavClose');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav .nav-links a');
+        update();
+        window.addEventListener('scroll', update, { passive: true });
+    }
 
-    if (hamburger && mobileNav && mobileNavClose) {
-        // Open mobile nav
-        hamburger.addEventListener('click', () => {
-            mobileNav.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        // Close mobile nav
-        mobileNavClose.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        // Close mobile nav when clicking a link
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = '';
+    /* ----------------------------------------------------------
+       4. Smooth anchor scrolling (fallback for browsers without CSS scroll-behavior)
+       ---------------------------------------------------------- */
+    function initAnchors() {
+        document.querySelectorAll('a[href^="#"]').forEach((link) => {
+            link.addEventListener('click', (e) => {
+                const id = link.getAttribute('href');
+                if (!id || id === '#') return;
+                const target = document.querySelector(id);
+                if (!target) return;
+                e.preventDefault();
+                const offset = 70;
+                const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
             });
         });
-
-        // Close mobile nav on escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
     }
-});
+
+    /* ----------------------------------------------------------
+       Boot
+       ---------------------------------------------------------- */
+    function boot() {
+        initPlayhead();
+        initReveal();
+        initHeader();
+        initAnchors();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', boot, { once: true });
+    } else {
+        boot();
+    }
+})();
