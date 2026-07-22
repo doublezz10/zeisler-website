@@ -18,10 +18,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <script>(function(){var h=document.documentElement;h.classList.add("js");setTimeout(function(){if(!h.dataset.siteReady){h.classList.add("reveal-fail");}},2000);})();</script>
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 
 <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header">
@@ -40,6 +42,8 @@
         </div>
     </header>
 
+    <nav class="section-rail" aria-label="On this page"></nav>
+
     <main id="main-content">
         <header class="page-header">
             <h1 class="page-title">CV</h1>
@@ -49,10 +53,11 @@
             <p class="cv-meta">Updated July 2026</p>
         </header>
 
-        <section class="section section-no-top" aria-labelledby="current-appointment-title">
-            <h2 class="subhead" id="current-appointment-title">Current appointment</h2>
+        <section class="section section-no-top" id="current-appointment" aria-labelledby="current-appointment-title">
+            <span class="section-index" aria-hidden="true" data-reveal>01</span>
+            <h2 class="subhead" id="current-appointment-title" data-reveal>Current appointment</h2>
             <div class="entries">
-                <article class="entry entry-cv">
+                <article class="entry entry-cv" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2024–present</span></div>
                     <div class="entry-body">
                         <h3 class="entry-title">Postdoctoral Fellow, Rudebeck Lab</h3>
@@ -63,10 +68,11 @@
             </div>
         </section>
 
-        <section class="section" aria-labelledby="education-title">
-            <h2 class="subhead" id="education-title">Education</h2>
+        <section class="section" id="education" aria-labelledby="education-title">
+            <span class="section-index" aria-hidden="true" data-reveal>02</span>
+            <h2 class="subhead" id="education-title" data-reveal>Education</h2>
             <div class="entries">
-                <article class="entry entry-cv">
+                <article class="entry entry-cv" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2019–2024</span></div>
                     <div class="entry-body">
                         <h3 class="entry-title">PhD in Neuroscience</h3>
@@ -75,7 +81,7 @@
                     </div>
                 </article>
 
-                <article class="entry entry-cv">
+                <article class="entry entry-cv" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2015–2019</span></div>
                     <div class="entry-body">
                         <h3 class="entry-title">BS in Neuroscience and BA in Latin, <em>summa cum laude</em></h3>
@@ -85,10 +91,11 @@
             </div>
         </section>
 
-        <section class="section" aria-labelledby="cv-research-title">
-            <h2 class="subhead" id="cv-research-title">Research</h2>
+        <section class="section" id="cv-research" aria-labelledby="cv-research-title">
+            <span class="section-index" aria-hidden="true" data-reveal>03</span>
+            <h2 class="subhead" id="cv-research-title" data-reveal>Research</h2>
             <div class="entries">
-                <article class="entry entry-research">
+                <article class="entry entry-research" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2019–2024</span></div>
                     <div class="entry-body">
                         <h3 class="entry-title">Comparative anatomy of amygdala–frontal circuits</h3>
@@ -96,7 +103,7 @@
                     </div>
                 </article>
 
-                <article class="entry entry-research">
+                <article class="entry entry-research" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2019–2024</span></div>
                     <div class="entry-body">
                         <h3 class="entry-title">Hierarchy of intrinsic timescales across species</h3>
@@ -104,7 +111,7 @@
                     </div>
                 </article>
 
-                <article class="entry entry-research">
+                <article class="entry entry-research" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2024–present</span></div>
                     <div class="entry-body">
                         <h3 class="entry-title">Circuit mechanisms of reinforcement learning in macaques</h3>
@@ -114,10 +121,11 @@
             </div>
         </section>
 
-        <section class="section" aria-labelledby="cv-publications-title">
-            <h2 class="subhead" id="cv-publications-title">Publications</h2>
+        <section class="section" id="cv-publications" aria-labelledby="cv-publications-title">
+            <span class="section-index" aria-hidden="true" data-reveal>04</span>
+            <h2 class="subhead" id="cv-publications-title" data-reveal>Publications</h2>
             <div class="entries">
-                <article class="entry entry-pub">
+                <article class="entry entry-pub" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2026</span></div>
                     <div class="entry-body">
                         <p class="pub-citation">London L, Love M, <strong>Zeisler</strong> ZR, et al. Dataset of cortical and subcortical single neuron activity during value-based tasks in macaque monkey. <em>Scientific Data</em> 13, 989 (2026).</p>
@@ -125,7 +133,7 @@
                     </div>
                 </article>
 
-                <article class="entry entry-pub">
+                <article class="entry entry-pub" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2025</span></div>
                     <div class="entry-body">
                         <p class="pub-citation"><strong>Zeisler</strong> ZR, Love M, Rutishauser U, Stoll FM, Rudebeck PH. Consistent hierarchies of single-neuron timescales in mice, macaques, and humans. <em>Journal of Neuroscience</em> 45(19), e2155242025 (2025).</p>
@@ -133,7 +141,7 @@
                     </div>
                 </article>
 
-                <article class="entry entry-pub">
+                <article class="entry entry-pub" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2025</span></div>
                     <div class="entry-body">
                         <p class="pub-citation"><strong>Zeisler</strong> ZR, Rudebeck PH. Evolutionary road to primate prefrontal cortex. In: <em>The Evolution of Nervous Systems</em>, 3rd ed., Vol. 3, 338–362. Elsevier (2025).</p>
@@ -141,7 +149,7 @@
                     </div>
                 </article>
 
-                <article class="entry entry-pub">
+                <article class="entry entry-pub" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2024</span></div>
                     <div class="entry-body">
                         <p class="pub-citation"><strong>Zeisler</strong> ZR, Heslin KA, Stoll FM, et al. Comparative basolateral amygdala connectomics reveals dissociable single-neuron projection patterns to frontal cortex in macaques and mice. <em>Current Biology</em> 34, 3249–3257 (2024).</p>
@@ -149,7 +157,7 @@
                     </div>
                 </article>
 
-                <article class="entry entry-pub">
+                <article class="entry entry-pub" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2023</span></div>
                     <div class="entry-body">
                         <p class="pub-citation"><strong>Zeisler</strong> ZR, London L, Janssen WG, Fredericks JM, Elorette C, Fujimoto A, Zhan H, Russ BE, Clem RL, Hof PR, Stoll FM, Rudebeck PH. Single basolateral amygdala neurons in macaques exhibit distinct connectional motifs with frontal cortex. <em>Neuron</em> 111(20), 3307–3320.e5 (2023).</p>
@@ -159,16 +167,26 @@
             </div>
         </section>
 
-        <section class="section" aria-labelledby="recognition-title">
-            <h2 class="subhead" id="recognition-title">Recognition</h2>
+        <section class="section" id="recognition" aria-labelledby="recognition-title">
+            <span class="section-index" aria-hidden="true" data-reveal>05</span>
+            <h2 class="subhead" id="recognition-title" data-reveal>Recognition</h2>
             <div class="entries">
-                <article class="entry entry-award">
+                <article class="entry entry-award" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2025</span></div>
                     <div class="entry-body">
                         <h3 class="entry-title">Cajal Club Krieg Cortical Scholar Award</h3>
                         <p class="award-body">Awarded in 2025 for contributions to research on cortical structure and function.</p>
                         <figure class="award-figure">
-                            <img src="assets/cajalclub_award.jpg" alt="Zach Zeisler receiving the Cajal Club Krieg Cortical Scholar Award in 2025">
+                            <picture>
+                                <source type="image/avif"
+                                    srcset="assets/gen/cajal-award-512w.avif 512w, assets/gen/cajal-award.avif 1024w"
+                                    sizes="(max-width: 640px) calc(100vw - 2.5rem), 480px">
+                                <source type="image/webp"
+                                    srcset="assets/gen/cajal-award-512w.webp 512w, assets/gen/cajal-award.webp 1024w"
+                                    sizes="(max-width: 640px) calc(100vw - 2.5rem), 480px">
+                                <img src="assets/cajalclub_award.jpg" width="1024" height="768"
+                                    alt="Zach Zeisler receiving the Cajal Club Krieg Cortical Scholar Award in 2025" loading="lazy" decoding="async">
+                            </picture>
                             <figcaption>Receiving the Cajal Club Krieg Cortical Scholar Award, 2025.</figcaption>
                         </figure>
                         <p class="entry-link"><a href="https://www.cajalclub.org/krieg-cortical-kudos" target="_blank" rel="noopener noreferrer">About the Krieg Cortical Kudos</a></p>
@@ -177,36 +195,38 @@
             </div>
         </section>
 
-        <section class="section" aria-labelledby="presentations-title">
-            <h2 class="subhead" id="presentations-title">Presentations</h2>
+        <section class="section" id="presentations" aria-labelledby="presentations-title">
+            <span class="section-index" aria-hidden="true" data-reveal>06</span>
+            <h2 class="subhead" id="presentations-title" data-reveal>Presentations</h2>
             <div class="entries">
-                <article class="entry entry-talk">
+                <article class="entry entry-talk" data-reveal>
                     <div class="entry-rail"><span class="entry-year">November 2025</span><span class="entry-tag">Contributed talk</span></div>
                     <div class="entry-body"><p class="talk-title">Society for Neuroscience Nanosymposium</p><p class="talk-detail"><q>Neural circuit mechanisms of bottom-up reward learning.</q> — San Diego, CA</p></div>
                 </article>
-                <article class="entry entry-talk">
+                <article class="entry entry-talk" data-reveal>
                     <div class="entry-rail"><span class="entry-year">September 2025</span><span class="entry-tag">Invited talk</span></div>
                     <div class="entry-body"><p class="talk-title">New York Memory Hub Conference</p><p class="talk-detail"><q>The neural circuits and mechanisms of short-term memory during reward learning.</q> — New York, NY</p></div>
                 </article>
-                <article class="entry entry-talk">
+                <article class="entry entry-talk" data-reveal>
                     <div class="entry-rail"><span class="entry-year">March 2025</span><span class="entry-tag">Invited talk</span></div>
                     <div class="entry-body"><p class="talk-title">Janelia Mechanistic Cognitive Neuroscience Workshop</p><p class="talk-detail"><q>Circuit mechanisms of bottom-up influences on reversal learning in macaques.</q> — Ashburn, VA</p></div>
                 </article>
-                <article class="entry entry-talk">
+                <article class="entry entry-talk" data-reveal>
                     <div class="entry-rail"><span class="entry-year">March 2025</span><span class="entry-tag">Poster</span></div>
                     <div class="entry-body"><p class="talk-title">COSYNE</p><p class="talk-detail"><q>Neural circuit mechanisms of bottom-up reward learning.</q> — Montreal, QC</p></div>
                 </article>
-                <article class="entry entry-talk">
+                <article class="entry entry-talk" data-reveal>
                     <div class="entry-rail"><span class="entry-year">September 2024</span><span class="entry-tag">Poster</span></div>
                     <div class="entry-body"><p class="talk-title">From Neuroscience to Artificially Intelligent Systems</p><p class="talk-detail"><q>Neural dynamics supporting affective reward learning.</q> — Cold Spring Harbor, NY</p></div>
                 </article>
             </div>
         </section>
 
-        <section class="section" aria-labelledby="service-title">
-            <h2 class="subhead" id="service-title">Teaching, mentoring, and outreach</h2>
+        <section class="section" id="service" aria-labelledby="service-title">
+            <span class="section-index" aria-hidden="true" data-reveal>07</span>
+            <h2 class="subhead" id="service-title" data-reveal>Teaching, mentoring, and outreach</h2>
             <div class="entries">
-                <article class="entry entry-cv">
+                <article class="entry entry-cv" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2020–2023</span></div>
                     <div class="entry-body">
                         <h3 class="entry-title">Project SHORT — Director of Outreach</h3>
@@ -214,7 +234,7 @@
                         <p class="cv-detail">Led outreach, website redesign, and student mentorship for Project SHORT, a volunteer program supporting students applying to graduate or medical school.</p>
                     </div>
                 </article>
-                <article class="entry entry-cv">
+                <article class="entry entry-cv" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2019–2023</span></div>
                     <div class="entry-body">
                         <h3 class="entry-title">MiNDS — Mentoring in Neuroscience Discovery at Sinai</h3>
@@ -222,7 +242,7 @@
                         <p class="cv-detail">Participated in Brain Awareness Week programming, neuroscience education, and STEM outreach in New York City.</p>
                     </div>
                 </article>
-                <article class="entry entry-cv">
+                <article class="entry entry-cv" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2021 · 2022</span></div>
                     <div class="entry-body">
                         <h3 class="entry-title">Teaching Assistant, Behavioral and Cognitive Neuroscience</h3>
@@ -236,9 +256,40 @@
 
     <footer class="site-footer">
         <div class="footer-inner">
-            <p class="footer-text"><span class="footer-name">Zach Zeisler</span></p>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-name">Zach Zeisler, PhD</span>
+                    <p class="footer-tag">Systems neuroscience — frontal–limbic circuits, learning, and decision-making in primates.</p>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-label">Navigate</span>
+                    <nav class="footer-nav" aria-label="Footer">
+                        <a href="index.html">Home</a>
+                        <a href="index.html#research">Research</a>
+                        <a href="publications.html">Publications</a>
+                        <a href="talks.html">Presentations</a>
+                        <a href="cv.html">CV</a>
+                    </nav>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-label">Elsewhere</span>
+                    <ul class="footer-social" aria-label="Profiles and contact">
+                        <li><a href="mailto:zachzeisler1@gmail.com">Email</a></li>
+                        <li><a href="https://scholar.google.com/citations?user=Dx2_HAkAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Scholar</a></li>
+                        <li><a href="https://github.com/DoubleZZ10" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/zacharyzeisler" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://orcid.org/0000-0003-1371-497X" target="_blank" rel="noopener noreferrer">ORCID</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-base">
+                <p class="footer-text">© <span data-year>2026</span> Zach Zeisler</p>
+                <p class="footer-text">Icahn School of Medicine at Mount Sinai</p>
+            </div>
         </div>
     </footer>
+
+    <script src="site.js?v=3"></script>
 </body>
 
 </html>

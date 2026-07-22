@@ -18,7 +18,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <script>(function(){var h=document.documentElement;h.classList.add("js");setTimeout(function(){if(!h.dataset.siteReady){h.classList.add("reveal-fail");}},2000);})();</script>
+    <link rel="stylesheet" href="style.css?v=4">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -44,6 +45,7 @@
 </head>
 
 <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="site-header">
@@ -62,13 +64,17 @@
         </div>
     </header>
 
+    <nav class="section-rail" aria-label="On this page"></nav>
+
     <main id="main-content">
         <section class="hero" id="top" aria-labelledby="hero-title">
             <div class="hero-grid">
-                <div class="hero-left">
+                <div class="hero-left" data-reveal>
                     <p class="kicker">systems neuroscientist</p>
 
                     <h1 class="display" id="hero-title">Zach Zeisler, PhD</h1>
+
+                    <span class="hero-trace" aria-hidden="true"></span>
 
                     <p class="lede">
                         I study how the organization and dynamics of frontal–limbic circuits support learning, decision-making, and flexible behavior in primates.
@@ -85,48 +91,60 @@
                     </div>
                 </div>
 
-                <aside class="hero-right" aria-label="Portrait">
+                <aside class="hero-right" aria-label="Portrait" data-reveal>
                     <figure class="portrait">
-                        <img src="assets/headshot.jpg" alt="Portrait of Zach Zeisler in a lab">
+                        <picture>
+                            <source type="image/avif"
+                                srcset="assets/gen/headshot-384w.avif 384w, assets/gen/headshot.avif 768w"
+                                sizes="(max-width: 860px) 384px, 496px">
+                            <source type="image/webp"
+                                srcset="assets/gen/headshot-384w.webp 384w, assets/gen/headshot.webp 768w"
+                                sizes="(max-width: 860px) 384px, 496px">
+                            <img src="assets/headshot.jpg" width="768" height="1024"
+                                alt="Portrait of Zach Zeisler in a lab" fetchpriority="high" decoding="async">
+                        </picture>
                     </figure>
+                    <p class="portrait-cap">In the lab · Icahn School of Medicine at Mount Sinai</p>
                 </aside>
             </div>
         </section>
 
         <section class="section" id="about" aria-labelledby="about-title">
-            <header class="section-header">
+            <header class="section-header" data-reveal>
+                <span class="section-index" aria-hidden="true">01</span>
                 <h2 class="section-title" id="about-title">About</h2>
             </header>
 
-            <div class="prose">
+            <div class="prose" data-reveal>
                 <p class="prose-lead">I am a systems neuroscientist interested in how the organization and dynamics of frontal–limbic circuits support learning, decision-making, and flexible behavior in primates. My work combines single-neuron neuroanatomy, electrophysiology, and comparative neuroscience.</p>
                 <p>I completed my PhD in Peter Rudebeck’s lab at the Icahn School of Medicine at Mount Sinai in 2024. My doctoral research combined single-neuron projection mapping with cross-species analyses of neural activity to study the organization of amygdala–frontal circuits. I am now a postdoctoral fellow in the Rudebeck Lab, where I study the circuit mechanisms underlying probabilistic learning.</p>
             </div>
         </section>
 
         <section class="section" id="research" aria-labelledby="research-title">
-            <header class="section-header">
+            <header class="section-header" data-reveal>
+                <span class="section-index" aria-hidden="true">02</span>
                 <h2 class="section-title" id="research-title">Research</h2>
             </header>
 
             <div class="entries">
-                <article class="entry entry-single-column">
-                                    <div class="entry-body">
-                                        <h3 class="entry-title">Amygdala–frontal anatomy</h3>
+                <article class="entry entry-single-column" data-reveal>
+                    <div class="entry-body">
+                        <h3 class="entry-title">Amygdala–frontal anatomy</h3>
                         <p class="cv-detail">Mapping how individual amygdala neurons project across frontal cortex and how those projection patterns differ between species.</p>
                     </div>
                 </article>
 
-                <article class="entry entry-single-column">
-                                    <div class="entry-body">
-                                        <h3 class="entry-title">Neural timescales across species</h3>
+                <article class="entry entry-single-column" data-reveal>
+                    <div class="entry-body">
+                        <h3 class="entry-title">Neural timescales across species</h3>
                         <p class="cv-detail">Studying how differences in the temporal structure of neural activity organize frontal and limbic circuits across mice, macaques, and humans.</p>
                     </div>
                 </article>
 
-                <article class="entry entry-single-column">
-                                    <div class="entry-body">
-                                        <h3 class="entry-title">Reward learning in macaques</h3>
+                <article class="entry entry-single-column" data-reveal>
+                    <div class="entry-body">
+                        <h3 class="entry-title">Reward learning in macaques</h3>
                         <p class="cv-detail">I study how interactions between the amygdala and frontal cortex support learning from outcomes during reinforcement learning tasks in macaques.</p>
                     </div>
                 </article>
@@ -134,29 +152,48 @@
         </section>
 
         <section class="section" id="selected-work" aria-labelledby="selected-work-title">
-            <header class="section-header">
+            <header class="section-header" data-reveal>
+                <span class="section-index" aria-hidden="true">03</span>
                 <h2 class="section-title" id="selected-work-title">Selected work</h2>
             </header>
 
             <div class="entries">
-                <article class="entry entry-pub">
+                <article class="entry entry-pub" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2023</span></div>
                     <div class="entry-body">
                         <p class="pub-citation"><strong>Zeisler</strong> ZR, London L, Janssen WG, Fredericks JM, Elorette C, Fujimoto A, Zhan H, Russ BE, Clem RL, Hof PR, Stoll FM, Rudebeck PH. Single basolateral amygdala neurons in macaques exhibit distinct connectional motifs with frontal cortex. <em>Neuron</em> 111(20), 3307–3320.e5 (2023).</p>
                         <figure class="entry-figure">
-                            <img src="assets/MAPseq figure.png" alt="MAPseq figure showing macaque amygdala neuron projection patterns and branching proportions" loading="lazy">
+                            <picture>
+                                <source type="image/avif"
+                                    srcset="assets/gen/mapseq-figure-659w.avif 659w, assets/gen/mapseq-figure.avif 1318w"
+                                    sizes="(max-width: 640px) calc(100vw - 2.5rem), 608px">
+                                <source type="image/webp"
+                                    srcset="assets/gen/mapseq-figure-659w.webp 659w, assets/gen/mapseq-figure.webp 1318w"
+                                    sizes="(max-width: 640px) calc(100vw - 2.5rem), 608px">
+                                <img src="assets/MAPseq figure.png" width="1318" height="809"
+                                    alt="MAPseq figure showing macaque amygdala neuron projection patterns and branching proportions" loading="lazy" decoding="async">
+                            </picture>
                         </figure>
                         <p class="entry-link"><a href="https://doi.org/10.1016/j.neuron.2023.09.024" target="_blank" rel="noopener noreferrer">DOI</a><span aria-hidden="true"> · </span><a href="https://pubmed.ncbi.nlm.nih.gov/37857091/" target="_blank" rel="noopener noreferrer">PubMed</a></p>
                         <p class="pub-gloss">Characterization of projection patterns from more than 3,000 macaque basolateral amygdala neurons, revealing structured multi-area projection motifs.</p>
                     </div>
                 </article>
 
-                <article class="entry entry-pub">
+                <article class="entry entry-pub" data-reveal>
                     <div class="entry-rail"><span class="entry-year">2025</span></div>
                     <div class="entry-body">
                         <p class="pub-citation"><strong>Zeisler</strong> ZR, Love M, Rutishauser U, Stoll FM, Rudebeck PH. Consistent hierarchies of single-neuron timescales in mice, macaques, and humans. <em>Journal of Neuroscience</em> 45(19), e2155242025 (2025).</p>
                         <figure class="entry-figure">
-                            <img src="assets/Timescales figure.png" alt="Figure comparing neural timescales across mice, macaques, and humans" loading="lazy">
+                            <picture>
+                                <source type="image/avif"
+                                    srcset="assets/gen/timescales-figure-559w.avif 559w, assets/gen/timescales-figure.avif 1119w"
+                                    sizes="(max-width: 640px) calc(100vw - 2.5rem), 608px">
+                                <source type="image/webp"
+                                    srcset="assets/gen/timescales-figure-559w.webp 559w, assets/gen/timescales-figure.webp 1119w"
+                                    sizes="(max-width: 640px) calc(100vw - 2.5rem), 608px">
+                                <img src="assets/Timescales figure.png" width="1119" height="665"
+                                    alt="Figure comparing neural timescales across mice, macaques, and humans" loading="lazy" decoding="async">
+                            </picture>
                         </figure>
                         <p class="entry-link"><a href="https://doi.org/10.1523/JNEUROSCI.2155-24.2025" target="_blank" rel="noopener noreferrer">DOI</a><span aria-hidden="true"> · </span><a href="https://pubmed.ncbi.nlm.nih.gov/40180571/" target="_blank" rel="noopener noreferrer">PubMed</a></p>
                         <p class="pub-gloss">Cross-species analysis identifying largely consistent neural timescale hierarchies across frontal and limbic regions.</p>
@@ -166,51 +203,53 @@
         </section>
 
         <section class="section" id="experience" aria-labelledby="experience-title">
-            <header class="section-header">
+            <header class="section-header" data-reveal>
+                <span class="section-index" aria-hidden="true">04</span>
                 <h2 class="section-title" id="experience-title">Experience</h2>
             </header>
 
             <div class="entries">
-                <article class="entry entry-cv entry-single-column">
-                                    <div class="entry-body">
-                                        <h3 class="entry-title">Postdoctoral Fellow, Rudebeck Lab</h3>
+                <article class="entry entry-cv entry-single-column" data-reveal>
+                    <div class="entry-body">
+                        <h3 class="entry-title">Postdoctoral Fellow, Rudebeck Lab</h3>
                         <p class="cv-meta">Icahn School of Medicine at Mount Sinai</p>
                         <p class="cv-meta">2024–present</p>
                     </div>
                 </article>
 
-                <article class="entry entry-cv entry-single-column">
-                                    <div class="entry-body">
-                                        <h3 class="entry-title">PhD in Neuroscience</h3>
+                <article class="entry entry-cv entry-single-column" data-reveal>
+                    <div class="entry-body">
+                        <h3 class="entry-title">PhD in Neuroscience</h3>
                         <p class="cv-meta">Icahn School of Medicine at Mount Sinai</p>
                         <p class="cv-meta">2024</p>
                     </div>
                 </article>
 
-                <article class="entry entry-cv entry-single-column">
-                                    <div class="entry-body">
-                                        <h3 class="entry-title">BS in Neuroscience and BA in Latin, <em>summa cum laude</em></h3>
+                <article class="entry entry-cv entry-single-column" data-reveal>
+                    <div class="entry-body">
+                        <h3 class="entry-title">BS in Neuroscience and BA in Latin, <em>summa cum laude</em></h3>
                         <p class="cv-meta">Mercer University</p>
                         <p class="cv-meta">2019</p>
                     </div>
                 </article>
 
-                <article class="entry entry-cv entry-single-column">
-                                    <div class="entry-body">
-                                        <h3 class="entry-title">Cajal Club Krieg Cortical Scholar Award, 2025</h3>
+                <article class="entry entry-cv entry-single-column" data-reveal>
+                    <div class="entry-body">
+                        <h3 class="entry-title">Cajal Club Krieg Cortical Scholar Award, 2025</h3>
                     </div>
                 </article>
             </div>
         </section>
 
         <section class="section section-contact" id="contact" aria-labelledby="contact-title">
-            <header class="section-header">
+            <header class="section-header" data-reveal>
+                <span class="section-index" aria-hidden="true">05</span>
                 <h2 class="section-title" id="contact-title">Contact</h2>
             </header>
 
-            <p class="contact-lede">I welcome questions about my research, opportunities to collaborate, and invitations to speak.</p>
+            <p class="contact-lede" data-reveal>I welcome questions about my research, opportunities to collaborate, and invitations to speak.</p>
 
-            <ul class="contact-list">
+            <ul class="contact-list" data-reveal>
                 <li>
                     <a class="contact-email cta cta-secondary" href="mailto:zachzeisler1@gmail.com">Email Me</a>
                 </li>
@@ -240,9 +279,40 @@
 
     <footer class="site-footer">
         <div class="footer-inner">
-            <p class="footer-text"><span class="footer-name">Zach Zeisler</span></p>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-name">Zach Zeisler, PhD</span>
+                    <p class="footer-tag">Systems neuroscience — frontal–limbic circuits, learning, and decision-making in primates.</p>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-label">Navigate</span>
+                    <nav class="footer-nav" aria-label="Footer">
+                        <a href="index.html">Home</a>
+                        <a href="index.html#research">Research</a>
+                        <a href="publications.html">Publications</a>
+                        <a href="talks.html">Presentations</a>
+                        <a href="cv.html">CV</a>
+                    </nav>
+                </div>
+                <div class="footer-col">
+                    <span class="footer-col-label">Elsewhere</span>
+                    <ul class="footer-social" aria-label="Profiles and contact">
+                        <li><a href="mailto:zachzeisler1@gmail.com">Email</a></li>
+                        <li><a href="https://scholar.google.com/citations?user=Dx2_HAkAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Scholar</a></li>
+                        <li><a href="https://github.com/DoubleZZ10" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/zacharyzeisler" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://orcid.org/0000-0003-1371-497X" target="_blank" rel="noopener noreferrer">ORCID</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-base">
+                <p class="footer-text">© <span data-year>2026</span> <span class="footer-name-inline">Zach Zeisler</span></p>
+                <p class="footer-text">Icahn School of Medicine at Mount Sinai</p>
+            </div>
         </div>
     </footer>
+
+    <script src="site.js?v=3"></script>
 </body>
 
 </html>
