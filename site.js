@@ -28,63 +28,6 @@
         updateBar();
     }
 
-    /* Section wayfinding rail, built from <main> sections that carry an id + heading */
-    var rail = document.querySelector(".section-rail");
-    if (rail) {
-        var sections = Array.prototype.slice.call(
-            document.querySelectorAll("main section[id]")
-        );
-        var items = [];
-        sections.forEach(function (s) {
-            if (s.classList.contains("hero") || s.id === "top") return;
-            var labelled = s.getAttribute("aria-labelledby");
-            var head = labelled
-                ? document.getElementById(labelled)
-                : s.querySelector("h2, h3");
-            if (!head) return;
-            var label = head.textContent.replace(/^\d+\s*/, "").trim();
-            if (!label) return;
-            var a = document.createElement("a");
-            a.href = "#" + s.id;
-            a.className = "rail-item";
-            a.setAttribute("data-target", s.id);
-            a.innerHTML =
-                '<span class="rail-dot" aria-hidden="true"></span>' +
-                '<span class="rail-label">' +
-                label +
-                "</span>";
-            rail.appendChild(a);
-            items.push({ el: a, section: s });
-        });
-
-        if (items.length >= 3) {
-            rail.classList.add("is-ready");
-            var setActive = function (id) {
-                items.forEach(function (it) {
-                    it.el.classList.toggle(
-                        "is-active",
-                        it.el.getAttribute("data-target") === id
-                    );
-                });
-            };
-            if ("IntersectionObserver" in window) {
-                var spy = new IntersectionObserver(
-                    function (entries) {
-                        entries.forEach(function (e) {
-                            if (e.isIntersecting) setActive(e.target.id);
-                        });
-                    },
-                    { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
-                );
-                items.forEach(function (it) {
-                    spy.observe(it.section);
-                });
-            }
-        } else {
-            rail.parentNode.removeChild(rail);
-        }
-    }
-
     /* Quiet scroll reveals */
     var reveals = Array.prototype.slice.call(
         document.querySelectorAll("[data-reveal]")
