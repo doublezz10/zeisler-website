@@ -52,6 +52,16 @@
             reveals.forEach(function (el) {
                 ro.observe(el);
             });
+
+            /* Backstop: reveals start at opacity 0, so anything that keeps the
+               observer from firing (throttled background tab, restrictive
+               webview) would otherwise leave the page blank. Show everything
+               after a beat regardless. */
+            window.setTimeout(function () {
+                reveals.forEach(function (el) {
+                    el.classList.add("in");
+                });
+            }, 2500);
         }
     }
 
@@ -59,7 +69,7 @@
     var zoomables = Array.prototype.slice.call(
         document.querySelectorAll(".entry-figure img, .award-figure img")
     );
-    if (zoomables.length && !reduce) {
+    if (zoomables.length) {
         var lb = document.createElement("div");
         lb.className = "lightbox";
         lb.setAttribute("role", "dialog");
@@ -115,6 +125,16 @@
         lb.addEventListener("click", function (e) {
             if (e.target === lb || e.target === closeBtn) close();
         });
+
+        /* Keep focus inside the dialog: the close button is its only focusable
+           control, so any Tab press returns there rather than walking out into
+           the page behind the overlay. */
+        lb.addEventListener("keydown", function (e) {
+            if (e.key !== "Tab") return;
+            e.preventDefault();
+            closeBtn.focus();
+        });
+
         document.addEventListener("keydown", function (e) {
             if (e.key === "Escape" && lb.classList.contains("is-open")) close();
         });
