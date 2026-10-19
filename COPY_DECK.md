@@ -283,6 +283,6 @@ Public copy names the question and the direction of influence, never the study d
 
 ## Still outstanding
 
-- `Zeisler CV.pdf` is unchanged and still reads "April 1, 2024 – present"; the web copy now outruns it. Regenerating the PDF is a separate job.
+- `Zeisler CV.pdf` was replaced on 19 October 2026 with the redacted export from iCloud, now carrying the Université de Montréal appointment. Home address stays redacted; the mobile number is omitted.
 - CI2B fellowship status not reflected anywhere, pending the outcome.
 - Bluesky bio and GitHub employer field still point at Mount Sinai.
