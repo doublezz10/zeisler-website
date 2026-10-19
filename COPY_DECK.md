@@ -239,3 +239,50 @@ Before any production copy change:
 - [x] Every row changed from `Pending`, `Choice required`, or `Needs fact check` to an explicit approval state
 
 No website HTML, CSS, JavaScript, metadata, or file names should be changed until this checklist is complete for the relevant release.
+
+---
+
+# Addendum, 19 October 2026: UdeM / Perich Lab transition pass
+
+Second copy pass, covering the move from the Rudebeck Lab at Mount Sinai to the Perich Lab (sinthlab) at the Université de Montréal and Mila. Full rationale, the disclosure audit, and the LinkedIn copy live outside this repo in `COPY_UdeM_TRANSITION.md`; this addendum records what was implemented and the two decisions taken.
+
+Status: **implemented in the working tree, committed, not pushed.** No row from the approved set above was reversed.
+
+## Decisions taken
+
+1. **Research heading.** `Cognitive–motor integration` kept. Noted at review time that the phrase is commoner in human rehabilitation and aging work than in macaque systems neuroscience; chosen anyway for legibility.
+2. **Affiliation.** `Université de Montréal · Mila` on the hero role line and on both appointment entries. No other page carries the Mila name.
+
+## Mechanism
+
+A single scripted pass with per-replacement assertions, so a partial application fails loudly rather than silently. Changes were confined to text nodes. No layout, navigation, class, id, or asset changes.
+
+## Disclosure rule for this pass
+
+Public copy names the question and the direction of influence, never the study design. Withheld: the four behavioural task variants and their designs, the specific cognitive and sensorimotor regions targeted, recording hardware and channel counts, the analytical framework by name, the aim structure and timeline, and the unpublished tract-tracing plans. Species and the fact of neural recording in behaving animals were kept, because they are already public in the CV.
+
+## Rows
+
+| ID | File | Change |
+|---|---|---|
+| META-V2-002 | `index.html` | Meta, Open Graph, Twitter and JSON-LD description rewritten to the cognitive-signals framing |
+| META-V2-004 | `index.html` | JSON-LD affiliation `Icahn School of Medicine at Mount Sinai` → `Université de Montréal` |
+| META-V2-006 | `index.html` | Footer tagline rewritten; colon separator rather than em-dash, per house style |
+| META-V2-007 | all four pages | Footer affiliation line → `Université de Montréal` |
+| META-V2-008 | `cv.html` | "Updated July 2026" → "Updated October 2026" |
+| HOME-HERO-V2-001 | `index.html` | Hero lede rewritten to the current question |
+| HOME-HERO-V2-002/003 | `index.html` | Hero roles → `Postdoctoral Fellow, Perich Lab` / `Université de Montréal · Mila` |
+| HOME-ABOUT-V2-001/002 | `index.html` | About lead and biography rewritten; biography now carries the PhD → postdoc → UdeM arc and the credit-assignment thread |
+| HOME-RESEARCH-V2-001 | `index.html` | New first Research entry, `Cognitive–motor integration` |
+| HOME-RESEARCH-V2-004 | `index.html` | `Reward learning in macaques` description moved to past tense |
+| HOME-EXPERIENCE-V2-001/002 | `index.html` | New Perich Lab entry; Rudebeck entry dated `2024–2026` |
+| CV-V2-001 | `cv.html` | Section heading `Current appointment` → `Appointments` |
+| CV-V2-002/003 | `cv.html` | New Perich Lab appointment; Rudebeck appointment dated `2024–2026` |
+| CV-V2-004/005 | `cv.html` | New `Cognitive–motor integration` research entry, moved into chronological order; reinforcement-learning entry to past tense, `2024–2026` |
+| footer only | `publications.html`, `talks.html` | Footer affiliation line only |
+
+## Still outstanding
+
+- `Zeisler CV.pdf` was replaced on 19 October 2026 with the redacted export from iCloud, now carrying the Université de Montréal appointment. Home address stays redacted; the mobile number is omitted.
+- CI2B fellowship status not reflected anywhere, pending the outcome.
+- Bluesky bio and GitHub employer field still point at Mount Sinai.
